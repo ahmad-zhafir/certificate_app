@@ -168,7 +168,6 @@ class _RecipientTrueCopyUploadScreenState extends State<RecipientTrueCopyUploadS
     }
   }
 
-
   Widget _buildUploadTab() {
     final primaryColor = Colors.blue[700];
 
@@ -262,9 +261,6 @@ class _RecipientTrueCopyUploadScreenState extends State<RecipientTrueCopyUploadS
     );
   }
 
-
-
-
   Widget _buildStatusTab() {
     final user = FirebaseAuth.instance.currentUser;
     final stream = FirebaseFirestore.instance
@@ -272,8 +268,6 @@ class _RecipientTrueCopyUploadScreenState extends State<RecipientTrueCopyUploadS
         .where('recipientUid', isEqualTo: user?.uid)
         .orderBy('submittedAt', descending: true)
         .snapshots();
-
-
 
     return Container(
 
