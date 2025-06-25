@@ -156,9 +156,3 @@ lib/
 
 - **General issues:**  
   Run `flutter doctor` and resolve any reported problems.
-
----
-
-## License
-
-MIT (or your license here)
