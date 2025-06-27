@@ -96,7 +96,7 @@ class _VerifyTrueCopyRequestScreenState extends State<VerifyTrueCopyRequestScree
         );
 
         page.graphics.drawString(
-          'Certified True Copy\n$verifiedByLine\nCertified on: $formattedDate\n$certId',
+          'Certified True Copy\n$verifiedByLine\nCertified on: $formattedDate\nCertificate ID: $certId',
           PdfStandardFont(PdfFontFamily.helvetica, 12),
           bounds: Rect.fromLTWH(10.0, 10.0, pageSize.width - 20.0, 60.0),
           brush: PdfBrushes.red,
