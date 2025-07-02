@@ -1,5 +1,6 @@
 import 'package:certificate_gen/screens/pdf_preview_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class CaIssuedCertificatesScreen extends StatelessWidget {
@@ -7,8 +8,15 @@ class CaIssuedCertificatesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentUser = FirebaseAuth.instance.currentUser;
+
+    if (currentUser == null) {
+      return Center(child: Text("User not logged in"));
+    }
+
     final certStream = FirebaseFirestore.instance
         .collection('certificates')
+        .where('issuerUid', isEqualTo: currentUser.uid)
         .orderBy('createdAt', descending: true)
         .snapshots();
 
