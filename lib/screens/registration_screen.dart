@@ -98,7 +98,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                   const SizedBox(height: 8),
 
-
                   // Subtitle
                   Text(
                     "Please enter your details to continue",
@@ -109,8 +108,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ),
                   const SizedBox(height: 40),
-
-                  // Name input (original logic preserved)
+                  // Name input 
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Full Name',
@@ -124,8 +122,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     validator: (val) => val == null || val.isEmpty ? "Name is required" : null,
                   ),
                   const SizedBox(height: 16),
-
-                  // Role dropdown (original logic preserved)
+                  // Role dropdown 
                   DropdownButtonFormField<String>(
                     value: selectedRole,
                     hint: Text("Select Role", style: TextStyle(color: Colors.blueGrey[600])),
@@ -140,8 +137,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
-
-                  // Conditional organization field (original logic preserved)
+                  // Conditional organization field 
                   if (selectedRole == 'Certificate Authority' || selectedRole == 'Client') ...[
                     TextFormField(
                       decoration: InputDecoration(
@@ -158,10 +154,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                     const SizedBox(height: 16),
                   ],
-
-
-
-                  // Contact number (original logic preserved)
+                  // Contact number
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Contact Number',
@@ -174,8 +167,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     onChanged: (val) => contactNumber = val,
                   ),
                   const SizedBox(height: 40),
-
-                  // Continue button (original logic preserved)
+                  // Continue button 
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
