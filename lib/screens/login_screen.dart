@@ -1,3 +1,4 @@
+import 'package:certificate_gen/screens/donate_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
@@ -69,8 +70,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
     setState(() => isLoading = false);
   }
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -231,10 +230,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 16),
                   TextButton.icon(
                     onPressed: () {
-                      // Trigger donation
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const DonateScreen()),
+                      );
                     },
-                    icon: Icon(Icons.volunteer_activism, color: Colors.pinkAccent),
-                    label: Text(
+                    icon: const Icon(Icons.volunteer_activism, color: Colors.pinkAccent),
+                    label: const Text(
                       "Donate to Support CertiSafe",
                       style: TextStyle(
                         color: Colors.pinkAccent,
@@ -245,9 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.pinkAccent,
                     ),
-                  )
-
-
+                  ),
                 ],
               ],
             ),
