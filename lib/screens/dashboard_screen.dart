@@ -7,7 +7,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
-import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -164,8 +163,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 
-
-
   Widget _dashboardButton({
     required IconData icon,
     required String label,
@@ -221,7 +218,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
         return '';
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -303,7 +299,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ],
       ),
 
-
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : Column(
@@ -339,28 +334,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
           ),
-
           // Main Dashboard Content
           Expanded(child: _buildDashboard(context)),
         ],
       ),
-
     );
   }
-
-  String _getAppBarTitle() {
-    switch (role) {
-      case 'Admin':
-        return 'Admin Dashboard';
-      case 'Certificate Authority':
-        return 'CA Dashboard';
-      case 'Client':
-        return 'Client Dashboard';
-      case 'Recipient':
-        return 'Recipient Dashboard';
-      default:
-        return 'Dashboard';
-    }
-  }
-
 }
